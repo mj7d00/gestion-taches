@@ -1,4 +1,3 @@
-/* ===== RESET & BASE ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -38,7 +37,6 @@ body {
   min-height: 100vh;
 }
 
-/* ===== LAYOUT ===== */
 .app-wrapper {
   display: flex;
   flex-direction: column;
@@ -53,7 +51,6 @@ body {
   margin: 0 auto;
 }
 
-/* ===== NAVBAR ===== */
 .navbar {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   padding: 0 2rem;
@@ -104,7 +101,6 @@ body {
   color: var(--white);
 }
 
-/* ===== PAGE HEADER ===== */
 .page-header {
   margin-bottom: 2rem;
 }
@@ -121,7 +117,6 @@ body {
   font-size: 0.95rem;
 }
 
-/* ===== STATS BAR ===== */
 .stats-bar {
   display: flex;
   gap: 1rem;
@@ -151,7 +146,6 @@ body {
 .stat-card .stat-value { font-size: 1.5rem; font-weight: 700; line-height: 1; }
 .stat-card .stat-label { font-size: 0.75rem; color: var(--gray-600); text-transform: uppercase; letter-spacing: .5px; }
 
-/* ===== FILTER BAR ===== */
 .filter-bar {
   display: flex;
   gap: 0.5rem;
@@ -175,14 +169,12 @@ body {
 .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
 .filter-btn.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
 
-/* ===== TASK GRID ===== */
 .task-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.25rem;
 }
 
-/* ===== TASK CARD ===== */
 .task-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -236,7 +228,6 @@ body {
   gap: 0.5rem;
 }
 
-/* ===== BADGE / STATUS ===== */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -252,7 +243,6 @@ body {
 .badge-doing  { background: var(--primary-light);  color: var(--primary); }
 .badge-done   { background: var(--success-light); color: var(--success); }
 
-/* ===== BUTTONS ===== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -291,7 +281,6 @@ body {
 .btn-sm { padding: 0.3rem 0.75rem; font-size: 0.8rem; }
 .btn-lg { padding: 0.75rem 1.75rem; font-size: 1rem; }
 
-/* ===== FORM ===== */
 .form-card {
   background: var(--white);
   border-radius: var(--radius);
@@ -356,7 +345,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   justify-content: flex-end;
 }
 
-/* ===== EMPTY STATE ===== */
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
@@ -367,7 +355,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .empty-state h3 { font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--gray-700); }
 .empty-state p  { font-size: 0.9rem; margin-bottom: 1.5rem; }
 
-/* ===== LOADING ===== */
 .loading-wrapper {
   display: flex;
   flex-direction: column;
@@ -389,7 +376,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 
 @keyframes spin { to { transform: rotate(360deg); } }
 
-/* ===== ALERT ===== */
 .alert {
   padding: 0.9rem 1.2rem;
   border-radius: var(--radius-sm);
@@ -403,7 +389,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .alert-error   { background: var(--danger-light);  color: #991b1b; border-left: 4px solid var(--danger); }
 .alert-success { background: var(--success-light); color: #166534; border-left: 4px solid var(--success); }
 
-/* ===== CONFIRM DIALOG ===== */
 .overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,.45);
@@ -430,7 +415,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
 .dialog p  { color: var(--gray-600); font-size: 0.9rem; margin-bottom: 1.5rem; }
 .dialog-actions { display: flex; gap: 0.75rem; justify-content: flex-end; }
 
-/* ===== FOOTER ===== */
 .app-footer {
   text-align: center;
   padding: 1.25rem;
@@ -440,7 +424,6 @@ textarea.form-control { resize: vertical; min-height: 100px; }
   background: var(--white);
 }
 
-/* ===== 404 ===== */
 .not-found {
   text-align: center;
   padding: 5rem 2rem;

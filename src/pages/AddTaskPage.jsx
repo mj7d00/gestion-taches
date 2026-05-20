@@ -53,16 +53,15 @@ export default function AddTaskPage() {
   return (
     <>
       <div className="page-header">
-        <h1>➕ Nouvelle Tâche</h1>
+        <h1>Nouvelle Tâche</h1>
         <p>Remplissez le formulaire ci-dessous pour créer une nouvelle tâche.</p>
       </div>
 
       <div className="form-card">
-        {apiError && <div className="alert alert-error">⚠️ {apiError}</div>}
-        {success  && <div className="alert alert-success">✅ Tâche créée ! Redirection…</div>}
+        {apiError && <div className="alert alert-error">{apiError}</div>}
+        {success  && <div className="alert alert-success">Tâche créée ! Redirection...</div>}
 
         <form onSubmit={handleSubmit} noValidate>
-          {/* Titre */}
           <div className="form-group">
             <label className="form-label" htmlFor="titre">
               Titre <span className="required">*</span>
@@ -80,11 +79,10 @@ export default function AddTaskPage() {
               autoFocus
             />
             {errors.titre && (
-              <p className="form-error">⚠️ {errors.titre}</p>
+              <p className="form-error">{errors.titre}</p>
             )}
           </div>
 
-          {/* Description */}
           <div className="form-group">
             <label className="form-label" htmlFor="description">
               Description <small style={{ fontWeight: 400, color: 'var(--gray-400)' }}>(optionnelle)</small>
@@ -93,7 +91,7 @@ export default function AddTaskPage() {
               id="description"
               name="description"
               className="form-control"
-              placeholder="Décrivez votre tâche…"
+              placeholder="Décrivez votre tâche..."
               value={form.description}
               onChange={handleChange}
               disabled={submitting || success}
@@ -101,7 +99,6 @@ export default function AddTaskPage() {
             />
           </div>
 
-          {/* Statut */}
           <div className="form-group">
             <label className="form-label" htmlFor="statut">Statut</label>
             <select
@@ -118,17 +115,16 @@ export default function AddTaskPage() {
             </select>
           </div>
 
-          {/* Actions */}
           <div className="form-actions">
             <Link to="/" className="btn btn-ghost">
-              ← Annuler
+              Annuler
             </Link>
             <button
               type="submit"
               className="btn btn-primary"
               disabled={submitting || success}
             >
-              {submitting ? '⏳ Création…' : '✅ Créer la tâche'}
+              {submitting ? 'Création...' : 'Créer la tâche'}
             </button>
           </div>
         </form>

@@ -15,7 +15,6 @@ export default function EditTaskPage() {
   const [apiError, setApiError]     = useState(null)
   const [success, setSuccess]       = useState(false)
 
-  // Load existing task
   useEffect(() => {
     const fetchTask = async () => {
       setLoading(true)
@@ -75,7 +74,7 @@ export default function EditTaskPage() {
     return (
       <div className="loading-wrapper">
         <div className="spinner" />
-        <p>Chargement de la tâche…</p>
+        <p>Chargement de la tâche...</p>
       </div>
     )
   }
@@ -83,16 +82,15 @@ export default function EditTaskPage() {
   return (
     <>
       <div className="page-header">
-        <h1>✏️ Modifier la Tâche</h1>
+        <h1>Modifier la Tâche</h1>
         <p>Mettez à jour les informations de la tâche ci-dessous.</p>
       </div>
 
       <div className="form-card">
-        {apiError && <div className="alert alert-error">⚠️ {apiError}</div>}
-        {success  && <div className="alert alert-success">✅ Tâche mise à jour ! Redirection…</div>}
+        {apiError && <div className="alert alert-error">{apiError}</div>}
+        {success  && <div className="alert alert-success">Tâche mise à jour ! Redirection...</div>}
 
         <form onSubmit={handleSubmit} noValidate>
-          {/* Titre */}
           <div className="form-group">
             <label className="form-label" htmlFor="titre">
               Titre <span className="required">*</span>
@@ -110,11 +108,10 @@ export default function EditTaskPage() {
               autoFocus
             />
             {errors.titre && (
-              <p className="form-error">⚠️ {errors.titre}</p>
+              <p className="form-error">{errors.titre}</p>
             )}
           </div>
 
-          {/* Description */}
           <div className="form-group">
             <label className="form-label" htmlFor="description">
               Description{' '}
@@ -124,7 +121,7 @@ export default function EditTaskPage() {
               id="description"
               name="description"
               className="form-control"
-              placeholder="Décrivez votre tâche…"
+              placeholder="Décrivez votre tâche..."
               value={form.description}
               onChange={handleChange}
               disabled={submitting || success}
@@ -132,7 +129,6 @@ export default function EditTaskPage() {
             />
           </div>
 
-          {/* Statut */}
           <div className="form-group">
             <label className="form-label" htmlFor="statut">Statut</label>
             <select
@@ -149,17 +145,16 @@ export default function EditTaskPage() {
             </select>
           </div>
 
-          {/* Actions */}
           <div className="form-actions">
             <Link to="/" className="btn btn-ghost">
-              ← Annuler
+              Annuler
             </Link>
             <button
               type="submit"
               className="btn btn-warning"
               disabled={submitting || success}
             >
-              {submitting ? '⏳ Mise à jour…' : '✏️ Enregistrer'}
+              {submitting ? 'Mise à jour...' : 'Enregistrer'}
             </button>
           </div>
         </form>

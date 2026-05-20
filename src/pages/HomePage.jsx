@@ -56,35 +56,34 @@ export default function HomePage() {
   return (
     <>
       <div className="page-header">
-        <h1>📋 Mes Tâches</h1>
+        <h1>Mes Tâches</h1>
         <p>Gérez et suivez l'avancement de toutes vos tâches.</p>
       </div>
 
-      {/* Stats */}
       <div className="stats-bar">
         <div className="stat-card total">
-          <span className="stat-icon">📌</span>
+          <span className="stat-icon"></span>
           <div>
             <div className="stat-value">{counts.total}</div>
             <div className="stat-label">Total</div>
           </div>
         </div>
         <div className="stat-card todo">
-          <span className="stat-icon">🕐</span>
+          <span className="stat-icon"></span>
           <div>
             <div className="stat-value">{counts.todo}</div>
             <div className="stat-label">À faire</div>
           </div>
         </div>
         <div className="stat-card doing">
-          <span className="stat-icon">⚡</span>
+          <span className="stat-icon"></span>
           <div>
             <div className="stat-value">{counts.doing}</div>
             <div className="stat-label">En cours</div>
           </div>
         </div>
         <div className="stat-card done">
-          <span className="stat-icon">✅</span>
+          <span className="stat-icon"></span>
           <div>
             <div className="stat-value">{counts.done}</div>
             <div className="stat-label">Terminées</div>
@@ -92,10 +91,9 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* Alerts */}
       {error && (
         <div className="alert alert-error">
-          ⚠️ {error}
+          {error}
           <button
             onClick={fetchTasks}
             style={{ marginLeft: 'auto', textDecoration: 'underline', cursor: 'pointer', background: 'none', border: 'none', color: 'inherit' }}
@@ -105,7 +103,6 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Filter bar */}
       {!loading && tasks.length > 0 && (
         <div className="filter-bar">
           {FILTERS.map(f => (
@@ -125,24 +122,23 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Content */}
       {loading ? (
         <div className="loading-wrapper">
           <div className="spinner" />
-          <p>Chargement des tâches…</p>
+          <p>Chargement des tâches...</p>
         </div>
       ) : tasks.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">📭</div>
+          <div className="empty-icon"></div>
           <h3>Aucune tâche pour l'instant</h3>
           <p>Commencez par créer votre première tâche !</p>
           <Link to="/ajouter" className="btn btn-primary btn-lg">
-            ➕ Créer une tâche
+            Créer une tâche
           </Link>
         </div>
       ) : filtered.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">🔍</div>
+          <div className="empty-icon"></div>
           <h3>Aucune tâche « {filter} »</h3>
           <p>Modifiez le filtre ou créez une nouvelle tâche.</p>
           <button className="btn btn-ghost" onClick={() => setFilter('Toutes')}>
@@ -161,11 +157,10 @@ export default function HomePage() {
         </div>
       )}
 
-      {/* Confirm delete dialog */}
       {deleteTarget && (
         <div className="overlay" onClick={() => setDeleteTarget(null)}>
           <div className="dialog" onClick={e => e.stopPropagation()}>
-            <h3>🗑️ Confirmer la suppression</h3>
+            <h3>Confirmer la suppression</h3>
             <p>
               Voulez-vous vraiment supprimer la tâche{' '}
               <strong>« {deleteTarget.titre} »</strong> ?
@@ -184,7 +179,7 @@ export default function HomePage() {
                 onClick={handleDeleteConfirm}
                 disabled={deleting}
               >
-                {deleting ? 'Suppression…' : '🗑️ Supprimer'}
+                {deleting ? 'Suppression...' : 'Supprimer'}
               </button>
             </div>
           </div>

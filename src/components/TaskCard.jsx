@@ -1,14 +1,14 @@
 import { useNavigate } from 'react-router-dom'
 
 const STATUS_CONFIG = {
-  'À faire':  { cls: 'badge-todo',  icon: '🕐' },
-  'En cours': { cls: 'badge-doing', icon: '⚡' },
-  'Terminé':  { cls: 'badge-done',  icon: '✅' },
+  'À faire':  { cls: 'badge-todo' },
+  'En cours': { cls: 'badge-doing' },
+  'Terminé':  { cls: 'badge-done' },
 }
 
 export default function TaskCard({ task, onDelete }) {
   const navigate = useNavigate()
-  const status = STATUS_CONFIG[task.statut] || { cls: 'badge-todo', icon: '🕐' }
+  const status = STATUS_CONFIG[task.statut] || { cls: 'badge-todo' }
 
   return (
     <div className="task-card">
@@ -22,7 +22,7 @@ export default function TaskCard({ task, onDelete }) {
 
       <div className="task-card-footer">
         <span className={`badge ${status.cls}`}>
-          {status.icon} {task.statut}
+          {task.statut}
         </span>
 
         <div className="task-actions">
@@ -30,13 +30,13 @@ export default function TaskCard({ task, onDelete }) {
             className="btn btn-warning btn-sm"
             onClick={() => navigate(`/modifier/${task.id}`)}
           >
-            ✏️ Modifier
+            Modifier
           </button>
           <button
             className="btn btn-danger btn-sm"
             onClick={() => onDelete(task)}
           >
-            🗑️ Supprimer
+            Supprimer
           </button>
         </div>
       </div>

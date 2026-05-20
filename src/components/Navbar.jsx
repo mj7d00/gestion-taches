@@ -4,7 +4,6 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <NavLink to="/" className="navbar-brand">
-        <span className="brand-icon">✅</span>
         Gestion de Tâches
       </NavLink>
 
@@ -15,7 +14,7 @@ export default function Navbar() {
             end
             className={({ isActive }) => isActive ? 'active' : ''}
           >
-            🏠 Accueil
+            Accueil
           </NavLink>
         </li>
         <li>
@@ -23,7 +22,7 @@ export default function Navbar() {
             to="/ajouter"
             className={({ isActive }) => isActive ? 'active' : ''}
           >
-            ➕ Ajouter
+            Ajouter
           </NavLink>
         </li>
       </ul>
