@@ -1,0 +1,22 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "titre": "Apprendre React.js",
+      "description": "Étudier les composants, les hooks (useState, useEffect) et React Router.",
+      "statut": "En cours"
+    },
+    {
+      "id": 2,
+      "titre": "Configurer json-server",
+      "description": "Installer json-server et créer le fichier db.json pour simuler une API REST.",
+      "statut": "Terminé"
+    },
+    {
+      "id": 3,
+      "titre": "Créer le mini-projet CRUD",
+      "description": "",
+      "statut": "À faire"
+    }
+  ]
+}
